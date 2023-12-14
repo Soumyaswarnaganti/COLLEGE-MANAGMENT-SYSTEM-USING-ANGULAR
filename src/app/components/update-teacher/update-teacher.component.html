@@ -1,0 +1,63 @@
+<div class="main">
+    <div class="container col-md-6">
+        <br>
+         <h3>Update teacher</h3>
+         <br>
+        <div >
+            <form [formGroup]="updateTeacherForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <br>
+                    <input class="form-control" type="text" id="name" name="name" required formControlName="name">
+                    <small *ngIf="updateTeacherForm.controls['name'].invalid && (updateTeacherForm.controls['name'].dirty || updateTeacherForm.controls['name'].touched)">
+                        <div *ngIf="updateTeacherForm.controls['name'].errors?.['required']">This field is required</div>
+                    </small>
+                    <br>
+                </div>
+                <div class="form-group">
+                    <label for="department">Department:</label>
+                    <br>
+                    <input class="form-control" type="text" id="department" name="department" required formControlName="department">
+                    <small *ngIf="updateTeacherForm.controls['department'].invalid && (updateTeacherForm.controls['department'].dirty || updateTeacherForm.controls['department'].touched)">
+                        <div *ngIf="updateTeacherForm.controls['department'].errors?.['required']">This field is required</div>
+                    </small>
+                    <br>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <br>
+                    <input class="form-control" type="text" id="subject" name="subject" required formControlName="subject">
+                    <small *ngIf="updateTeacherForm.controls['subject'].invalid && (updateTeacherForm.controls['subject'].dirty || updateTeacherForm.controls['subject'].touched)">
+                        <div *ngIf="updateTeacherForm.controls['subject'].errors?.['required']">This field is required</div>
+                    </small>
+                    <br>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <br>
+                    <input class="form-control" type="text" id="address" name="address" required formControlName="address">
+                    <small *ngIf="updateTeacherForm.controls['address'].invalid && (updateTeacherForm.controls['address'].dirty || updateTeacherForm.controls['address'].touched)">
+                        <div *ngIf="updateTeacherForm.controls['address'].errors?.['required']">This field is required</div>
+                    </small>
+                    <br>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Contact No:</label>
+                    <br>
+                    <input class="form-control" type="text" id="phone" name="phone" required formControlName="phone">
+                    <small *ngIf="updateTeacherForm.controls['phone'].invalid && (updateTeacherForm.controls['phone'].dirty || updateTeacherForm.controls['phone'].touched)">
+                        <div *ngIf="updateTeacherForm.controls['phone'].errors?.['required']">This field is required</div>
+                    </small>
+                    <br>
+                </div>
+                <br>
+                <button class="btn bg-dark text-light" type="submit" (click)="updateTeacher()" [disabled]="updateTeacherForm.invalid">Update</button>
+                <br>
+                <br>
+                <br>
+            </form>
+        </div>
+    </div>
+    
+</div>
+

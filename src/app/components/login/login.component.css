@@ -1,0 +1,18 @@
+.main{
+    background-color: pink;
+    height: 638px;
+    width: 1536px;
+}
+
+input{
+    border: 2px solid black;
+}
+
+small{
+    color: red;
+}
+
+h3{
+    margin-top: 120px;
+}
+

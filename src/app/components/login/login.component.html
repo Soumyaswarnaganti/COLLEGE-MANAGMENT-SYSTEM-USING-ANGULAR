@@ -1,0 +1,30 @@
+<div class="main">
+    <div class="container col-md-6">
+         <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+            <br>
+            <h3>User Login</h3>
+            <br>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" formControlName="email" [(ngModel)]="user.email" required>
+                <small *ngIf="email.invalid && (email.dirty || email.touched)">
+                    <div *ngIf="email.errors?.['required']">Email is required</div>
+                    <div *ngIf="email.errors?.['email']">Email is invalid</div>
+                </small>
+          </div>
+            
+           <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" formControlName="password" [(ngModel)]="user.password" required>
+                <small *ngIf="password.invalid && (password.dirty || password.touched)">
+                    <div *ngIf="password.errors?.['required']">password is required</div>
+                    <div *ngIf="password.errors?.['minlength']">Password should contain 8 numbers or characters</div>
+                </small>
+          </div>
+    
+            <br>
+            <button type="submit" class="btn bg-dark text-light" [disabled]="loginForm.invalid">Login</button>
+    
+         </form>
+    </div>
+</div>

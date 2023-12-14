@@ -1,0 +1,38 @@
+<div class="main">
+    <br>
+    <br>
+    <div class="container col-md-10">
+        <h3>OUR TEACHERS</h3>
+    
+        <table class="table table-striped table-danger" style="border:2px;">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Subject</th>
+                    <th>Address</th>
+                    <th>Contact No.</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let teacher of teachers">
+                    <td>{{teacher.name}}</td>
+                    <td>{{teacher.department}}</td>
+                    <td>{{teacher.subject}}</td>
+                    <td>{{teacher.address}}</td>
+                    <td>{{teacher.phone}}</td>
+                    <td>
+                        <button class="btn bg-info text-light" routerLink="/teacher/{{teacher.id}}">Update</button>&nbsp;
+                        <button class="btn bg-danger text-light" (click)="deleteTeacher(teacher.id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+            <button class="btn bg-dark text-light" routerLink="/teacher">Add Teacher</button>
+        <br>
+    </div>
+
+</div>
+

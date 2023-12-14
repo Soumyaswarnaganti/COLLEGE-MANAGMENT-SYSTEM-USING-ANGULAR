@@ -1,0 +1,36 @@
+<div class="main">
+    <br>
+    <br>
+    <div class="container col-md-10">
+        <h3>OUR STUDENTS</h3>
+        <table class="table table-striped table-danger" style="border:2px;">
+            <thead>
+                <tr>
+                    <th>Roll No.</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Address</th>
+                    <th>Contact No.</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of students">
+                    <td>{{student.roll}}</td>
+                    <td>{{student.name}}</td>
+                    <td>{{student.department}}</td>
+                    <td>{{student.address}}</td>
+                    <td>{{student.phone}}</td>
+                    <td>
+                        <button class="btn bg-info text-light" routerLink="/student/{{student.id}}">Update</button>&nbsp;
+                        <button class="btn bg-danger text-light" (click)="deleteStudent(student.id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+            <button class="btn bg-dark text-light" routerLink="/student">Add Student</button>
+        <br>
+    </div>
+
+</div>
